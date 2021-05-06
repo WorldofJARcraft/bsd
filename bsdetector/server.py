@@ -46,6 +46,11 @@ or
         d = [handle_statement(stmt, feat) for stmt, feat in enumerate_pairs(reqjson)]
         return jsonify(d), 200
 
+@app.route("/ping", methods=['GET'])
+def ping():
+    return "pong", 200
+    
+
 # def main(instream=stdin, outstream=stdout):
 #     """handle a stream of stateents in line delimited text"""
 #     while True:
