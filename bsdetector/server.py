@@ -11,7 +11,7 @@ def handle_statement(stmt, features=False):
     """handle the statement returning a dictionary to return to the client"""
     print(stmt)
     result = {}
-    result['bias'] = compute_bias(stmt)
+    result['bias'] = compute_avg_statement_bias(stmt)
     result['statment'] = stmt
     if features:
         exfeatures = extract_bias_features(stmt)
