@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from __future__ import print_function
 from __future__ import absolute_import
-from .bias import compute_bias, extract_bias_features
+from .bias import compute_bias, extract_bias_features,compute_avg_statement_bias
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
