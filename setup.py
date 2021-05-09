@@ -27,7 +27,6 @@ for item in requirements:
         link = link.lstrip('git+')
         links.append(link)
     object_methods = [method_name for method_name in dir(object)]
-    print(object_methods)
     if item.requirement:
         item_req = str(item.requirement)
         if "pattern" in item_req:

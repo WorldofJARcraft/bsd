@@ -9,6 +9,11 @@ RUN pip3 install -r requirements.txt
 COPY . .
 RUN python3 setup.py install
 
-ENV FLASK_APP=bsdetector/server.py
 
-CMD ["flask","run","--host","0.0.0.0"]
+# performance options 
+ENV PYTHONDONTWRITEBYTECODE TRUE
+ENV PYTHONUNBUFFERED TRUE
+
+
+
+CMD ["gunicorn","--bind","0.0.0.0:5000","--workers", "4", "manage:app"]
